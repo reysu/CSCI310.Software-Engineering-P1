@@ -14,19 +14,30 @@ public class SearchMap {
 			String outputFileName = args[1] + ".txt";
 			try {
 				Scanner inputReader = new Scanner(new FileInputStream(inputFileName));
+				String inputFile = "";
+				String startPoint = inputReader.nextLine();
+				/*comment or uncomment this line if u want the first line to be passed in */
+				//inputFile = startPoint + "\n";
 				while(inputReader.hasNextLine()) {
-					System.out.println(inputReader.nextLine());
+					
+					inputFile = inputFile + inputReader.nextLine() + "\n";
+					
 				}
 				inputReader.close();
+				FlightMap map = new FlightMap(inputFile);
+				System.out.println(map.getNumLocations());
+				
+				
+				
 				try {
 					FileWriter output = new FileWriter(new File(outputFileName));
 					PrintWriter printWriter = new PrintWriter(output);
-					printWriter.write("Destination\t Flight Route from P\t Total Cost");
+					printWriter.write("Destination\t Flight Route from "+ startPoint +"\t Total Cost");
 					printWriter.close();
 					
 				} catch (IOException e) {
 				} 
-			} catch (FileNotFoundException e) {
+			} catch (IOException e) {
 			
 			}
 		}else {
