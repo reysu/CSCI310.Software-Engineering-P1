@@ -9,9 +9,10 @@ public class FlightMap {
 	private int numLocations;			//Number of Flight Locations
 	private int[][] flights;  			//Adjaceny Matrix of Flight Graph 
 	private List<Character> cities; 		//List of all the cities - corresponds to Matrix
-	private char start; 				//Starting City
+	private char start; 					//Starting City
 	private String output;
-	/* Performs DFS to populate numLocations */
+
+	/*Populates the adjaceny matrix*/
 	public FlightMap(String inputFile,String startPoint) throws IOException {
 		cities = new ArrayList<Character>();
 		start = startPoint.charAt(0);
@@ -49,10 +50,12 @@ public class FlightMap {
 		}
 		dfs();
 	}
+	/*returns a string of all the flights*/
 	public String getOutput() {
 		return output;
 	}
-	public void dfs() {	
+	/*performs dfs on adjaceny matrix*/
+	private void dfs() {	
 		System.out.println(String.format("%1$"+10+ "s", "Destination")+
 				String.format("%1$"+25+ "s", "Flight route from " + start) + 
 				String.format("%1$"+20+ "s", "Total Cost ")
@@ -92,7 +95,6 @@ public class FlightMap {
 					int prev = cities.indexOf(route.get(route.size()-1));
 					int count2 = 0;
 					for(int z=0; z <route.size()+1;z++) {
-				//		System.out.println("checking to see if "+ route.get(route.size()-1) + " has children");
 						for(int i=0; i<numLocations;i++) {
 							if(flights[prev][i] != 0) {
 								if(visited[i] == false) {
@@ -109,7 +111,8 @@ public class FlightMap {
 			}
 		}
 	}
-	public int getPrice(List<Character> route) {
+	/*returns the price of a given route*/ 
+	private int getPrice(List<Character> route) {
 		int price = 0;
 		for (int i=0;i<route.size()-1;i++) {
 			int departureIndex = cities.indexOf(route.get(i));
@@ -118,15 +121,13 @@ public class FlightMap {
 		}
 		return price;
 	}
+	/*returns the number of locations*/
 	public int getNumLocations() {
 		return numLocations; 
 	}
+	/*returns the adjaceny matrix*/
 	public int[][] getFlights() {
 		return flights;
 	}
 
-	public void setFlights(int[][] flights) {
-		this.flights = flights;
-	}
-	
 }

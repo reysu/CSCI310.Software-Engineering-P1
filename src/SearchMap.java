@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,8 +15,6 @@ public class SearchMap {
 				Scanner inputReader = new Scanner(new FileInputStream(inputFileName));
 				String inputFile = "";
 				String startPoint = inputReader.nextLine();
-				/*comment or uncomment this line if u want the first line to be passed in */
-				//inputFile = startPoint + "\n";
 				while(inputReader.hasNextLine()) {
 					inputFile = inputFile + inputReader.nextLine() + "\n";
 				}
