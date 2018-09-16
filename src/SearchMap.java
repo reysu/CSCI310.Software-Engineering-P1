@@ -11,7 +11,7 @@ public class SearchMap {
 	public static void main(String args[]) {
 		if(0 < args.length) {
 			String inputFileName = args[0] + ".txt";
-			String outputFileName = args[1] + ".txt";
+			String outputFileName = args[1];
 			try {
 				Scanner inputReader = new Scanner(new FileInputStream(inputFileName));
 				String inputFile = "";
@@ -19,20 +19,15 @@ public class SearchMap {
 				/*comment or uncomment this line if u want the first line to be passed in */
 				//inputFile = startPoint + "\n";
 				while(inputReader.hasNextLine()) {
-					
 					inputFile = inputFile + inputReader.nextLine() + "\n";
-					
 				}
 				inputReader.close();
-				FlightMap map = new FlightMap(inputFile);
-				System.out.println(map.getNumLocations());
-				
-				
-				
+				FlightMap map = new FlightMap(inputFile,startPoint);
+			
 				try {
 					FileWriter output = new FileWriter(new File(outputFileName));
 					PrintWriter printWriter = new PrintWriter(output);
-					printWriter.write("Destination\t Flight Route from "+ startPoint +"\t Total Cost");
+					printWriter.write(map.getOutput());
 					printWriter.close();
 					
 				} catch (IOException e) {
