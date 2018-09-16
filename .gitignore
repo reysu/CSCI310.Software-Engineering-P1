@@ -16,3 +16,5 @@ Thumbs.db
 /src/TestSearchMap.class
 /src/.classpath
 /src/.project
+/src/.gitignore
+/src/outputfile
