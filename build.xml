@@ -21,7 +21,9 @@
   </target>
   <!-- Generate javadocs for current project into docs dir -->
   <target name="doc" depends="init" description="generate documentation">
-    <javadoc sourcepath="${source.dir}" destdir="${doc.dir}" />
+    <javadoc sourcepath="${source.dir}" destdir="${doc.dir}/">
+      <fileset dir="."/>
+    </javadoc>
   </target>
   <!-- Compile the java code in src dir into build dir -->
   <target name="dist" depends="init" description="creates jars">
