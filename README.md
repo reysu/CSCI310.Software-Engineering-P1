@@ -1,5 +1,6 @@
 # Assignment 1
-####Due 9/17/19
+*Due 9/17/19*
+
 The program takes in an input of costs from one location to another
 and outputs all possible paths and their corresponding costs.
 
