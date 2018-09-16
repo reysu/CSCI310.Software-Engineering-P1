@@ -78,10 +78,6 @@ public class FlightMap {
 	 * The method performs dfs on the adjaceny matrix and stores the result in a string
 	 */
 	private void dfs() {	
-		System.out.println(String.format("%1$"+10+ "s", "Destination")+
-				String.format("%1$"+25+ "s", "Flight route from " + start) + 
-				String.format("%1$"+20+ "s", "Total Cost ")
-				);
 		output = String.format("%1$"+10+ "s", "Destination")+
 				String.format("%1$"+25+ "s", "Flight route from " + start) + 
 				String.format("%1$"+20+ "s", "Total Cost ") + "\n";
@@ -96,9 +92,6 @@ public class FlightMap {
 			route.add(cities.get(curr));
 			if(visited[curr] == false) {
 				if(curr != 0 && curr != indexOfStart) {
-					output = output + String.format("%1$"+-17+ "s",cities.get(curr))+  
-							String.format("%1$"+-28+ "s",(Arrays.toString(route.toArray())))  +
-							String.format("%1$"+-10+ "s","$"+getPrice(route))+ "\n";
 					System.out.println(String.format("%1$"+-17+ "s",cities.get(curr))+  
 							String.format("%1$"+-28+ "s",(Arrays.toString(route.toArray())))  +
 							String.format("%1$"+-10+ "s","$"+getPrice(route)));
