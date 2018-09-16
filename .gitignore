@@ -7,3 +7,10 @@ Thumbs.db
 /bin
 /dist
 /doc
+/src/input2.txt
+/src/inputfile.txt
+/src/outputfile.txt
+/src/FlightMap.class
+/src/TestFlightMap.class
+/src/SearchMap.class
+/src/TestSearchMap.class
