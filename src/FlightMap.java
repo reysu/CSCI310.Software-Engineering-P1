@@ -1,18 +1,31 @@
+package src;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
+/**
+ * This class does depth first search and computes the cost of flight paths.
+ * @author Eric Su
+ * 
+ * */
+
 
 public class FlightMap {	
 	private int numLocations;			//Number of Flight Locations
 	private int[][] flights;  			//Adjaceny Matrix of Flight Graph 
 	private List<Character> cities; 		//List of all the cities - corresponds to Matrix
 	private char start; 					//Starting City
-	private String output;
+	private String output;				//
 
-	/*Populates the adjaceny matrix*/
+	/**
+	 * The constructor counts number of locations and stores the graph as an adjaceny matrix
+	 * @param inputFile the inputfile as a String
+	 * @param startPoint	the starting point - first line in the input file
+	 * @throws IOException
+	 */
 	public FlightMap(String inputFile,String startPoint) throws IOException {
 		cities = new ArrayList<Character>();
 		start = startPoint.charAt(0);
@@ -34,7 +47,10 @@ public class FlightMap {
 		storeMap(inputFile);
 		inputReader.close();
 	}
-	/*Stores flights into Adjaceny Matrix*/
+	/**
+	 * The method stores the graph as an adjaceny matrix
+	 * @param inputFile the input file as a string
+	 */
 	private void storeMap(String inputFile) {
 		Scanner inputReader = new Scanner(inputFile);
 		String currLine;
@@ -50,11 +66,17 @@ public class FlightMap {
 		}
 		dfs();
 	}
-	/*returns a string of all the flights*/
+	/**
+	 * 
+	 * @return returns the output as a string
+	 */
 	public String getOutput() {
 		return output;
 	}
-	/*performs dfs on adjaceny matrix*/
+	/**
+	 * 
+	 * The method performs dfs on the adjaceny matrix and stores the result in a string
+	 */
 	private void dfs() {	
 		System.out.println(String.format("%1$"+10+ "s", "Destination")+
 				String.format("%1$"+25+ "s", "Flight route from " + start) + 
@@ -111,7 +133,11 @@ public class FlightMap {
 			}
 		}
 	}
-	/*returns the price of a given route*/ 
+	/**
+	 * 
+	 * @param route a list of characters that form a path on the graph
+	 * @return returns the total price of a given route
+	 */
 	private int getPrice(List<Character> route) {
 		int price = 0;
 		for (int i=0;i<route.size()-1;i++) {
@@ -121,11 +147,17 @@ public class FlightMap {
 		}
 		return price;
 	}
-	/*returns the number of locations*/
+	/**
+	 * 
+	 * @return returns the number of locations 
+	 */
 	public int getNumLocations() {
 		return numLocations; 
 	}
-	/*returns the adjaceny matrix*/
+	/**
+	 * 
+	 * @return returns the adjaceny matrix
+	 */
 	public int[][] getFlights() {
 		return flights;
 	}

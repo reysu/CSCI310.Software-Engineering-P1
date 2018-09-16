@@ -1,3 +1,5 @@
+package src;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
@@ -5,6 +7,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+/**
+ * This class performs the file I/O for the input and output flies
+ * @author Eric Su
+ *
+ */
 public class SearchMap {
 	
 	public static void main(String args[]) {
