@@ -8,13 +8,17 @@ Search to traverse the graph. It prints out the path and costs during the
 traversal.
 
 ## How to run the program
-`ant init` to create bin, dist, doc files
+`ant init` creates bin, dist, doc folders
 
 `ant dist` to create jar files under `/dist`
 
+`ant clean` deletes bin, dist, and doc folders
+
 `ant doc` to create java doc under `/doc`
 
-`ant compile` to compile the java classes
+`ant test` to run junit tests
+
+`ant compile` compiles src/\*.java files to `bin/src/`
 
 To run go to `/bin` folder, then type `java src.SearchMap inputfile outputfile`
 
@@ -29,4 +33,4 @@ The inputfile and outputfile should have the .txt extension.
 The outputfile will also be printed in the terminal.
 
 There are junit tests for every *public* method, as the professor noted that
-private methods do not need to be tested since they are indirectly tested. 
+private methods do not need to be tested since they are indirectly tested.
