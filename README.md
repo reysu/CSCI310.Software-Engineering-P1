@@ -19,3 +19,5 @@ To run go to `/bin` folder, then type `java src.SearchMap inputfile outputfile`
 The FlightMap, SearchMap, TestFlightMap, and TestSearchMap are under the
 src package, so when you do ant compile it will create the .class files in
 bin/src.
+
+The inputfile and outputfile should have the .txt extension. 
