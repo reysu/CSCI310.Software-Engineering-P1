@@ -24,7 +24,7 @@ public class FlightMap {
 	 * The constructor counts number of locations and stores the graph as an adjaceny matrix
 	 * @param inputFile the inputfile as a String
 	 * @param startPoint	the starting point - first line in the input file
-	 * @throws IOException
+	 * @throws IOException exception if there is an error 
 	 */
 	public FlightMap(String inputFile,String startPoint) throws IOException {
 		cities = new ArrayList<Character>();

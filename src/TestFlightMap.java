@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.*;
 /**
  * This class contains JUnit tests for FlightMap class 
  * @author Eric Su
@@ -13,9 +13,10 @@ import java.util.List;
  * */
 
 public class TestFlightMap {
+	
 	/**
 	 * a JUnit test method to test output
-	 * @throws IOException 
+	 * @throws IOException exception if there is an error
 	 */
 	@Test
 	public void testGetNumLocations() throws IOException {
@@ -38,7 +39,7 @@ public class TestFlightMap {
 	}
 	/**
 	 * a JUnit test method to test the output
-	 * @throws IOException 
+	 * @throws IOException exception if there is an error
 	 */
 	@Test
 	public void testOutput() throws IOException {
@@ -106,7 +107,7 @@ public class TestFlightMap {
 	}
 	/**
 	 * a JUnit test method to test getting price
-	 * @throws IOException 
+	 * @throws IOException exception if there is an error
 	 */
 	@Test
 	public void testGetPrice() throws IOException {

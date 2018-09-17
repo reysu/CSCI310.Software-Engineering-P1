@@ -14,7 +14,7 @@ import org.junit.Test;
 public class TestSearchMap {
 	/**
 	 * a JUnit test method to test file/io
-	 * @throws IOException 
+	 * @throws IOException exception if there is an error 
 	 */
 	@Test
 	public void fileIO() throws IOException {
