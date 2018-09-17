@@ -1,5 +1,6 @@
 package src;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
@@ -17,7 +18,7 @@ public class SearchMap {
 	public static void main(String args[]) {
 		if(0 < args.length) {
 			String inputFileName = args[0] + ".txt";
-			String outputFileName = args[1];
+			String outputFileName = args[1] + ".txt";
 			try {
 				Scanner inputReader = new Scanner(new FileInputStream(inputFileName));
 				String inputFile = "";
@@ -27,7 +28,7 @@ public class SearchMap {
 				}
 				inputReader.close();
 				FlightMap map = new FlightMap(inputFile,startPoint);
-			
+				System.out.println(map.getOutput());
 				try {
 					FileWriter output = new FileWriter(new File(outputFileName));
 					PrintWriter printWriter = new PrintWriter(output);
