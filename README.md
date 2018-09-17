@@ -27,3 +27,6 @@ bin/src.
 The inputfile and outputfile should have the .txt extension.
 
 The outputfile will also be printed in the terminal.
+
+There are junit tests for every *public* method, as the professor noted that
+private methods do not need to be tested since they are indirectly tested. 
