@@ -25,3 +25,5 @@ src package, so when you do ant compile it will create the .class files in
 bin/src.
 
 The inputfile and outputfile should have the .txt extension.
+
+The outputfile will also be printed in the terminal.
